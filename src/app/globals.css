@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #090A0F;
+  --foreground: #E2E8F0;
+  --card-bg: #141822;
+  --card-border: #222938;
+}
+
+body {
+  color: var(--foreground);
+  background-color: var(--background);
+  font-family: var(--font-inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif);
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-image: 
+    radial-gradient(ellipse at 15% 15%, rgba(139, 92, 246, 0.04) 0%, transparent 45%),
+    radial-gradient(ellipse at 85% 85%, rgba(16, 185, 129, 0.03) 0%, transparent 45%);
+  background-attachment: fixed;
+}
+
+/* Custom dark scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0F1219;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #273042;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #374156;
+}
+
+/* Glass & Card utility styles */
+.card-dark {
+  background: rgba(20, 24, 34, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(39, 48, 66, 0.6);
+  border-radius: 1rem;
+}
+
+.card-dark:hover {
+  border-color: rgba(75, 85, 109, 0.7);
+}
+
+.card-interactive {
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-interactive:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px -6px rgba(0, 0, 0, 0.45);
+}
+
+/* Subtle glow effects */
+.glow-purple {
+  box-shadow: 0 0 20px -3px rgba(139, 92, 246, 0.18);
+}
+
+.glow-green {
+  box-shadow: 0 0 20px -3px rgba(16, 185, 129, 0.18);
+}
+
+/* Input reset for consistent dark look */
+input, textarea, select {
+  color-scheme: dark;
+}
+
