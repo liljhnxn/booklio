@@ -1,13 +1,13 @@
 import { defineChain } from "viem";
 import { http, createConfig, injected } from "wagmi";
 
-// Botchain Mainnet Definition (Chain ID 677)
+// BOT Chain Mainnet Definition (Chain ID 677)
 export const botchainMainnet = defineChain({
   id: 677,
-  name: "Botchain Mainnet",
+  name: "BOT Chain Mainnet",
   nativeCurrency: {
     decimals: 18,
-    name: "Bot",
+    name: "BOT",
     symbol: "BOT",
   },
   rpcUrls: {
@@ -20,39 +20,13 @@ export const botchainMainnet = defineChain({
   },
   blockExplorers: {
     default: {
-      name: "Botchain Scan",
+      name: "BOT Chain Explorer",
       url: process.env.NEXT_PUBLIC_BLOCK_EXPLORER || "https://scan.botchain.ai",
     },
   },
 });
 
-// Botchain Testnet Definition (Chain ID 968)
-export const botchainTestnet = defineChain({
-  id: 968,
-  name: "Botchain Testnet",
-  nativeCurrency: {
-    decimals: 18,
-    name: "BOHR",
-    symbol: "BOHR",
-  },
-  rpcUrls: {
-    default: {
-      http: ["https://rpc.bohr.life"],
-    },
-    public: {
-      http: ["https://rpc.bohr.life"],
-    },
-  },
-  blockExplorers: {
-    default: {
-      name: "Bohr Scan",
-      url: "https://scan.bohr.life",
-    },
-  },
-  testnet: true,
-});
-
-// Hardhat Local definition for development convenience
+// Local dev network
 export const hardhatLocal = defineChain({
   id: 31337,
   name: "Hardhat Localhost",
@@ -66,18 +40,16 @@ export const hardhatLocal = defineChain({
       http: ["http://127.0.0.1:8545"],
     },
   },
-  testnet: true,
 });
 
 export const wagmiConfig = createConfig({
-  chains: [botchainMainnet, botchainTestnet, hardhatLocal],
+  chains: [botchainMainnet, hardhatLocal],
   connectors: [
     injected({ target: "metaMask" }),
     injected(),
   ],
   transports: {
     [botchainMainnet.id]: http(process.env.NEXT_PUBLIC_RPC_URL || "https://rpc.botchain.ai"),
-    [botchainTestnet.id]: http("https://rpc.bohr.life"),
     [hardhatLocal.id]: http("http://127.0.0.1:8545"),
   },
   ssr: true,

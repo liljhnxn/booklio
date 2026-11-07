@@ -99,7 +99,7 @@ The script will automatically:
 1. Deploy `Booklio.sol` to Botchain Mainnet using optimized gas.
 2. Output the deployed contract address, transaction hash, and exact fee paid.
 3. Automatically update `src/contracts/contractAddress.ts`, ABI, and environment variables.
-4. Verify the source code on Bohr / Botchain Explorer.
+4. Verify the source code on BOT Chain Explorer.
 
 ---
 

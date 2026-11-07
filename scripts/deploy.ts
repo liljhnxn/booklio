@@ -9,13 +9,12 @@ async function main() {
   console.log("=========================================");
 
   const network = await ethers.provider.getNetwork();
-  const chainId = Number(network.chainId);
-  const isMainnet = chainId === 677 || hre.network.name === "botchainMainnet";
-  const tokenSymbol = isMainnet ? "BOT" : "BOHR";
-  const explorerUrl = isMainnet ? "https://scan.botchain.ai" : "https://scan.bohr.life";
-  const rpcUrl = isMainnet ? "https://rpc.botchain.ai" : "https://rpc.bohr.life";
+  const chainId = Number(network.chainId) || 677;
+  const tokenSymbol = "BOT";
+  const explorerUrl = "https://scan.botchain.ai";
+  const rpcUrl = "https://rpc.botchain.ai";
 
-  console.log("Target Network:", hre.network.name, `(Chain ID: ${chainId})`);
+  console.log("Target Network: BOT Chain Mainnet", `(Chain ID: ${chainId})`);
   console.log("Explorer URL:", explorerUrl);
 
   const [deployer] = await ethers.getSigners();
@@ -35,7 +34,7 @@ async function main() {
   console.log("\nDeploying Booklio contract with optimized gas...");
   const BooklioFactory = await ethers.getContractFactory("Booklio");
 
-  // Deploy using current network gasPrice without unnecessary markup
+  // Deploy using current network gasPrice without markup
   const booklio = await BooklioFactory.deploy({
     gasPrice: currentGasPrice,
   });
@@ -58,7 +57,7 @@ async function main() {
       const gasUsed = receipt.gasUsed;
       const feePaid = gasUsed * (receipt.gasPrice || currentGasPrice);
       console.log(`Gas Used: ${gasUsed.toString()} units`);
-      console.log(`Total Fee Paid: ${ethers.formatEther(feePaid)} ${tokenSymbol} (ultra-low fee)`);
+      console.log(`Total Fee Paid: ${ethers.formatEther(feePaid)} ${tokenSymbol}`);
     }
   }
   console.log("-----------------------------------------");
@@ -146,7 +145,7 @@ export const BOTCHAIN_EXPLORER_URL = process.env.NEXT_PUBLIC_BLOCK_EXPLORER || "
   }
 
   console.log("\n=========================================");
-  console.log(`Booklio is live and ready on Botchain (${isMainnet ? "Mainnet" : "Testnet"})!`);
+  console.log("Booklio is live and ready on BOT Chain Mainnet!");
   console.log("=========================================");
 }
 

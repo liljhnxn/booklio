@@ -33,13 +33,13 @@ Modern appointment scheduling platforms suffer from structural flaws that hurt i
 
 ## 3. The Booklio Solution
 
-Booklio replaces centralized scheduling databases with an immutable, transparent Solidity smart contract deployed on **Botchain Testnet**.
+Booklio replaces centralized scheduling databases with an immutable, transparent Solidity smart contract deployed on **BOT Chain Mainnet**.
 
 | Dimension | Legacy Web2 Booking (Calendly / Acuity) | Booklio Web3 Protocol |
 |---|---|---|
-| **Data Storage** | Centralized proprietary cloud database | Immutable Botchain smart contract |
+| **Data Storage** | Centralized proprietary cloud database | Immutable BOT Chain smart contract |
 | **User Identity** | Email, phone number, passwords, tracking cookies | Cryptographic wallet address (MetaMask) |
-| **Fees** | \$15–\$50/month recurring subscription | Low testnet / on-chain gas per action only |
+| **Fees** | \$15–\$50/month recurring subscription | Low on-chain gas per action only |
 | **Double-Booking Defense** | Software-level sync heuristics (prone to lag) | Hardcoded atomic state checks at EVM level |
 | **Censorship Resistance** | Low (accounts can be blocked or closed) | High (fully decentralized, self-custodied) |
 | **Privacy (PII)** | Extensive collection and third-party sharing | Zero PII collected; anonymous & verifiable |
@@ -48,7 +48,7 @@ Booklio replaces centralized scheduling databases with an immutable, transparent
 
 ## 4. Technical Architecture & System Design
 
-Booklio utilizes a modern, serverless architecture that connects the client interface directly to the Botchain EVM node:
+Booklio utilizes a modern, serverless architecture that connects the client interface directly to the BOT Chain EVM node:
 
 ```
 [ Customer / Business Owner ]
@@ -57,9 +57,9 @@ Booklio utilizes a modern, serverless architecture that connects the client inte
              │
     [ Next.js 14 Frontend ] (Tailwind CSS, wagmi v2, viem)
              │
-     (JSON-RPC: https://rpc.bohr.life)
+     (JSON-RPC: https://rpc.botchain.ai)
              │
-   [ Botchain Testnet (Chain ID 968) ]
+   [ BOT Chain Mainnet (Chain ID 677) ]
              │
    ┌──────────────────────────────────────────────┐
    │         Booklio.sol Smart Contract           │
@@ -120,7 +120,7 @@ The `Booklio.sol` smart contract manages three core entities: **Services**, **Sl
 ## 6. Tokenomics & Business Model
 
 Booklio operates as a lightweight utility protocol:
-- **No Token Tolls:** Users are not forced to purchase a custom platform token; transactions settle in native `BOHR`.
+- **No Token Tolls:** Users are not forced to purchase a custom platform token; transactions settle in native `BOT` (150 Million Total Supply).
 - **Future Monetization Pathways:**
   - *Optional Escrow Layer:* Optional deposit/escrow held in smart contract until appointment completion, taking a tiny 0.5%–1% settlement fee.
   - *Premium Custom Themes & Domains:* Vanity URLs and customized landing pages for enterprise providers.
@@ -129,8 +129,8 @@ Booklio operates as a lightweight utility protocol:
 
 ## 7. Roadmap
 
-- **Phase 1 (Completed):** Core contract development, unit test suite (16/16 tests passing), Botchain deployment & explorer verification, responsive Next.js frontend, MetaMask integration.
-- **Phase 2 (Current):** Ecosystem directory listing, co-marketing with Botchain, community testnet beta program.
+- **Phase 1 (Completed):** Core contract development, unit test suite (16/16 tests passing), BOT Chain Mainnet deployment & explorer verification, responsive Next.js frontend, MetaMask integration.
+- **Phase 2 (Current):** Ecosystem directory listing, co-marketing with BOT Chain, community growth program.
 - **Phase 3:** Optional Web3 payment escrow integration, multi-wallet provider support, decentralized notifications (Push Protocol / XMTP).
-- **Phase 4:** Mainnet deployment on Botchain and decentralized calendar sync (iCal / Google Calendar read-only export).
+- **Phase 4:** Decentralized calendar sync (iCal / Google Calendar read-only export) and enterprise analytics.
 

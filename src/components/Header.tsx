@@ -64,10 +64,17 @@ export function Header() {
                   <span>Switch to Botchain</span>
                 </button>
               ) : (
-                <div className="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-charcoal-800 border border-charcoal-700 text-slate-300">
+                <a
+                  href={BOTCHAIN_EXPLORER_URL}
+                  target="_blank"
+                  rel="noreferrer"
+                  title="View on BOT Chain Explorer"
+                  className="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-charcoal-800 border border-charcoal-700 text-slate-300 hover:border-brand-green/40 hover:text-white transition-all"
+                >
                   <span className="w-2 h-2 rounded-full bg-brand-green animate-pulse" />
-                  <span>Botchain Mainnet (677)</span>
-                </div>
+                  <span>BOT Chain Mainnet (677)</span>
+                  <ExternalLink className="w-3 h-3 text-slate-400" />
+                </a>
               )}
             </div>
           )}
@@ -88,7 +95,7 @@ export function Header() {
                 href={`${BOTCHAIN_EXPLORER_URL}/address/${address}`}
                 target="_blank"
                 rel="noreferrer"
-                title="View on Bohr Explorer"
+                title="View on BOT Chain Explorer"
                 className="p-1.5 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-charcoal-700/60 transition-colors"
               >
                 <ExternalLink className="w-3.5 h-3.5" />
