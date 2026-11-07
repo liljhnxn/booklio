@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { useAccount, useConnect, useDisconnect, useChainId, useSwitchChain } from "wagmi";
 import { shortenAddress } from "@/utils/formatters";
 import { BOTCHAIN_CHAIN_ID, BOTCHAIN_EXPLORER_URL } from "@/contracts/contractAddress";
-import { Calendar, Wallet, LogOut, Check, Copy, AlertTriangle, ExternalLink } from "lucide-react";
+import { Calendar, Wallet, LogOut, Check, Copy, AlertTriangle, ExternalLink, Globe, Search } from "lucide-react";
 
 export function Header() {
   const { address, isConnected } = useAccount();
@@ -33,7 +33,7 @@ export function Header() {
 
   return (
     <header className="border-b border-charcoal-700/60 bg-charcoal-900/80 backdrop-blur-md sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-3">
         {/* Brand & Tagline */}
         <div className="flex items-center space-x-3">
           <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-purple/20 via-brand-purple to-brand-green/80 flex items-center justify-center shadow-glowPurple border border-brand-purple/40">
@@ -43,11 +43,46 @@ export function Header() {
             <div className="flex items-center space-x-2">
               <span className="text-xl font-bold tracking-tight text-white font-mono">Booklio</span>
               <span className="text-[10px] tracking-wide font-medium uppercase px-2 py-0.5 rounded-full bg-brand-purple/10 text-brand-purple-soft border border-brand-purple/20">
-                Web3
+                Mainnet
               </span>
             </div>
             <p className="text-xs text-slate-400 font-normal">Your bookings, organized.</p>
           </div>
+        </div>
+
+        {/* Center / Ecosystem Links with Official BOT Chain Logo */}
+        <div className="hidden md:flex items-center space-x-2">
+          <a
+            href="https://botchain.ai"
+            target="_blank"
+            rel="noreferrer"
+            title="Visit official BOT Chain Website"
+            className="flex items-center space-x-2 px-3 py-1.5 rounded-xl text-xs font-medium text-slate-300 hover:text-white bg-charcoal-800/90 hover:bg-charcoal-700/90 border border-charcoal-700 hover:border-emerald-500/40 transition-all shadow-sm group"
+          >
+            <img
+              src="/botchain-logo.png"
+              alt="BOT Chain Logo"
+              className="w-4 h-4 rounded object-contain transition-transform group-hover:scale-105"
+            />
+            <span>BOT Chain Website</span>
+            <ExternalLink className="w-3 h-3 text-slate-400 group-hover:text-emerald-400 transition-colors" />
+          </a>
+
+          <a
+            href="https://scan.botchain.ai"
+            target="_blank"
+            rel="noreferrer"
+            title="Explore BOT Chain Mainnet Explorer"
+            className="flex items-center space-x-2 px-3 py-1.5 rounded-xl text-xs font-medium text-slate-300 hover:text-white bg-charcoal-800/90 hover:bg-charcoal-700/90 border border-charcoal-700 hover:border-emerald-500/40 transition-all shadow-sm group"
+          >
+            <img
+              src="/botchain-logo.png"
+              alt="BOT Chain Logo"
+              className="w-4 h-4 rounded object-contain transition-transform group-hover:scale-105"
+            />
+            <span>BOT Chain Explorer</span>
+            <ExternalLink className="w-3 h-3 text-slate-400 group-hover:text-emerald-400 transition-colors" />
+          </a>
         </div>
 
         {/* Right Actions */}
@@ -61,7 +96,7 @@ export function Header() {
                   className="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-amber-500/10 text-amber-300 border border-amber-500/30 hover:bg-amber-500/20 transition-colors"
                 >
                   <AlertTriangle className="w-3.5 h-3.5" />
-                  <span>Switch to Botchain</span>
+                  <span>Switch to BOT Chain</span>
                 </button>
               ) : (
                 <a
@@ -69,10 +104,14 @@ export function Header() {
                   target="_blank"
                   rel="noreferrer"
                   title="View on BOT Chain Explorer"
-                  className="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-charcoal-800 border border-charcoal-700 text-slate-300 hover:border-brand-green/40 hover:text-white transition-all"
+                  className="flex items-center space-x-2 px-3 py-1.5 rounded-xl text-xs font-medium bg-charcoal-800 border border-charcoal-700 text-slate-300 hover:border-emerald-500/40 hover:text-white transition-all shadow-sm"
                 >
-                  <span className="w-2 h-2 rounded-full bg-brand-green animate-pulse" />
-                  <span>BOT Chain Mainnet (677)</span>
+                  <img
+                    src="/botchain-logo.png"
+                    alt="BOT Chain Logo"
+                    className="w-3.5 h-3.5 rounded object-contain"
+                  />
+                  <span>BOT Chain (677)</span>
                   <ExternalLink className="w-3 h-3 text-slate-400" />
                 </a>
               )}
@@ -124,4 +163,3 @@ export function Header() {
     </header>
   );
 }
-
