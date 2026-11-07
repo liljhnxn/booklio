@@ -132,7 +132,7 @@ export default function Home() {
             <span>Your bookings, organized.</span>
           </div>
           <p className="font-mono text-[11px] text-slate-500">
-            Deployed on Botchain Testnet (Chain ID 968) • Zero user data collected
+            Deployed on Botchain Mainnet (Chain ID 677) • Zero user data collected
           </p>
         </div>
       </footer>

@@ -2,7 +2,7 @@
 
 > **Your bookings, organized.**
 
-Booklio is a lightweight, decentralized Web3 appointment-booking platform for small businesses and freelancers. Built on Next.js, Tailwind CSS, Solidity, and Hardhat, deployed on **Botchain Testnet**.
+Booklio is a lightweight, decentralized Web3 appointment-booking platform for small businesses and freelancers. Built on Next.js, Tailwind CSS, Solidity, and Hardhat, deployed and verified on **Botchain Mainnet**.
 
 ---
 
@@ -20,15 +20,16 @@ Booklio is a lightweight, decentralized Web3 appointment-booking platform for sm
 
 ---
 
-## ⛓️ Blockchain Configuration (Botchain Testnet)
+## ⛓️ Blockchain Configuration (Botchain Mainnet)
 
 | Parameter | Value |
 |---|---|
-| **Network Name** | Botchain Testnet |
-| **Chain ID** | `968` |
-| **RPC URL** | `https://rpc.bohr.life` |
-| **Block Explorer** | [https://scan.bohr.life](https://scan.bohr.life) |
-| **Currency Symbol** | `BOHR` |
+| **Network Name** | Botchain Mainnet |
+| **Chain ID** | `677` |
+| **RPC URL** | `https://rpc.botchain.ai` |
+| **Block Explorer** | [https://scan.botchain.ai](https://scan.botchain.ai) |
+| **Currency Symbol** | `BOT` |
+| **Deployed Contract** | [`0x8f51aE358b30c5499961b09b11bAB243C8F05B7b`](https://scan.botchain.ai/address/0x8f51aE358b30c5499961b09b11bAB243C8F05B7b#code) |
 
 ---
 
@@ -58,21 +59,15 @@ npm install
 
 ### 3. Environment Setup
 
-Copy `.env.example` to `.env.local`:
-
-```bash
-cp .env.example .env.local
-```
-
-Configure your environment variables:
+Configure your environment variables in `.env` / `.env.local`:
 
 ```env
-NEXT_PUBLIC_RPC_URL=https://rpc.bohr.life
-NEXT_PUBLIC_CHAIN_ID=968
-NEXT_PUBLIC_BLOCK_EXPLORER=https://scan.bohr.life
-NEXT_PUBLIC_BOOKLIO_CONTRACT_ADDRESS=0x<YOUR_DEPLOYED_CONTRACT_ADDRESS>
+NEXT_PUBLIC_RPC_URL=https://rpc.botchain.ai
+NEXT_PUBLIC_CHAIN_ID=677
+NEXT_PUBLIC_BLOCK_EXPLORER=https://scan.botchain.ai
+NEXT_PUBLIC_BOOKLIO_CONTRACT_ADDRESS=0x8f51aE358b30c5499961b09b11bAB243C8F05B7b
 
-# Private key for deployment script on Botchain testnet
+# Private key for deployment script
 PRIVATE_KEY=0x<YOUR_PRIVATE_KEY>
 ```
 
@@ -82,37 +77,29 @@ PRIVATE_KEY=0x<YOUR_PRIVATE_KEY>
 
 ### Compile Contracts
 ```bash
-npx hardhat compile
+npm run compile
 ```
 
 ### Run Unit Tests
-A full test suite is included in `test/Booklio.test.ts` covering service creation, slot creation, past slot validation, double-booking prevention, authorization checks, and dashboard queries.
-
 ```bash
-npx hardhat test
+npm run test
 ```
-
-Test results:
-- Service creation & input validation
-- Appointment slot management & past time rejection
-- Double booking prevention on-chain
-- Confirmation & cancellation permissions
-- Statistics and user booking aggregation
 
 ---
 
-## 🚀 Deployment to Botchain Testnet
+## 🚀 Deployment to Botchain Mainnet
 
-Deploy the `Booklio` smart contract to Botchain Testnet:
+Deploy the `Booklio` smart contract to Botchain Mainnet:
 
 ```bash
-npx hardhat run scripts/deploy.ts --network botchain
+npm run deploy:mainnet
 ```
 
 The script will automatically:
-1. Deploy `Booklio.sol` to Botchain Testnet.
-2. Output the deployed contract address and deployer balance.
-3. Automatically update `src/contracts/contractAddress.ts` and export the latest ABI to `src/contracts/BooklioABI.json`.
+1. Deploy `Booklio.sol` to Botchain Mainnet using optimized gas.
+2. Output the deployed contract address, transaction hash, and exact fee paid.
+3. Automatically update `src/contracts/contractAddress.ts`, ABI, and environment variables.
+4. Verify the source code on Bohr / Botchain Explorer.
 
 ---
 
@@ -126,14 +113,14 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-### MetaMask Setup for Botchain Testnet
+### MetaMask Setup for Botchain Mainnet
 
 1. Open MetaMask -> **Add network** -> **Add a network manually**.
-2. **Network Name:** Botchain Testnet
-3. **New RPC URL:** `https://rpc.bohr.life`
-4. **Chain ID:** `968`
-5. **Currency Symbol:** `BOHR`
-6. **Block Explorer URL:** `https://scan.bohr.life`
+2. **Network Name:** Botchain Mainnet
+3. **New RPC URL:** `https://rpc.botchain.ai`
+4. **Chain ID:** `677`
+5. **Currency Symbol:** `BOT`
+6. **Block Explorer URL:** `https://scan.botchain.ai`
 
 Connect your wallet using the **Connect MetaMask** button in the header.
 
@@ -156,4 +143,3 @@ Connect your wallet using the **Connect MetaMask** button in the header.
 ## ⚖️ License
 
 MIT License. Designed and crafted for **Booklio**.
-

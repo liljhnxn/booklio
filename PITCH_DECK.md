@@ -1,8 +1,8 @@
 # Booklio: Pitch Deck
 
 **Tagline:** *Your bookings, organized.*  
-**Live Contract:** `0x6729e06eCf3F3E94d7Cd5AA6c50A1Fd5fa06961E` (Botchain Testnet)  
-**Explorer:** [https://scan.bohr.life/address/0x6729e06eCf3F3E94d7Cd5AA6c50A1Fd5fa06961E#code](https://scan.bohr.life/address/0x6729e06eCf3F3E94d7Cd5AA6c50A1Fd5fa06961E#code)  
+**Live Contract:** `0x8f51aE358b30c5499961b09b11bAB243C8F05B7b` (Botchain Mainnet)  
+**Explorer:** [https://scan.botchain.ai/address/0x8f51aE358b30c5499961b09b11bAB243C8F05B7b#code](https://scan.botchain.ai/address/0x8f51aE358b30c5499961b09b11bAB243C8F05B7b#code)  
 **GitHub:** [https://github.com/liljhnxn/booklio.git](https://github.com/liljhnxn/booklio.git)
 
 ---
@@ -11,7 +11,7 @@
 ### **Booklio**
 #### *Your bookings, organized.*
 * A lightweight Web3 appointment-booking platform for freelancers and small businesses.
-* Deployed & Verified on **Botchain Testnet**.
+* Deployed & Verified on **Botchain Mainnet**.
 
 ---
 
@@ -63,8 +63,8 @@
 ## Slide 7: Traction & Milestones
 ### **What We Have Built & Shipped**
 * [x] **Smart Contract (`Booklio.sol`):** 100% unit test coverage (16/16 tests passing).
-* [x] **Testnet Deployment:** Live on Botchain Testnet (`0x6729e06eCf3F3E94d7Cd5AA6c50A1Fd5fa06961E`).
-* [x] **Verified Code:** Publicly verified on Bohr Scan explorer.
+* [x] **Mainnet Deployment:** Live on Botchain Mainnet (`0x8f51aE358b30c5499961b09b11bAB243C8F05B7b`).
+* [x] **Verified Code:** Publicly verified on Botchain Scan explorer.
 * [x] **Modern Client Application:** Responsive single-page application with dark charcoal design and subtle glowing accents.
 * [x] **Open Source:** Public GitHub repository and clean documentation.
 
@@ -80,5 +80,6 @@
 
 ## Slide 9: Contact & Quick Links
 * **Repository:** [github.com/liljhnxn/booklio](https://github.com/liljhnxn/booklio)
-* **Contract on Explorer:** [scan.bohr.life/address/0x6729e06eCf3F3E94d7Cd5AA6c50A1Fd5fa06961E#code](https://scan.bohr.life/address/0x6729e06eCf3F3E94d7Cd5AA6c50A1Fd5fa06961E#code)
+* **Contract on Explorer:** [scan.botchain.ai/address/0x8f51aE358b30c5499961b09b11bAB243C8F05B7b#code](https://scan.botchain.ai/address/0x8f51aE358b30c5499961b09b11bAB243C8F05B7b#code)
 * **Demo / App:** Runs locally via `npm run dev` or deployed via Vercel.
+

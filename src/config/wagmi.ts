@@ -1,8 +1,33 @@
 import { defineChain } from "viem";
 import { http, createConfig, injected } from "wagmi";
 
+// Botchain Mainnet Definition (Chain ID 677)
+export const botchainMainnet = defineChain({
+  id: 677,
+  name: "Botchain Mainnet",
+  nativeCurrency: {
+    decimals: 18,
+    name: "Bot",
+    symbol: "BOT",
+  },
+  rpcUrls: {
+    default: {
+      http: [process.env.NEXT_PUBLIC_RPC_URL || "https://rpc.botchain.ai"],
+    },
+    public: {
+      http: [process.env.NEXT_PUBLIC_RPC_URL || "https://rpc.botchain.ai"],
+    },
+  },
+  blockExplorers: {
+    default: {
+      name: "Botchain Scan",
+      url: process.env.NEXT_PUBLIC_BLOCK_EXPLORER || "https://scan.botchain.ai",
+    },
+  },
+});
+
 // Botchain Testnet Definition (Chain ID 968)
-export const botchain = defineChain({
+export const botchainTestnet = defineChain({
   id: 968,
   name: "Botchain Testnet",
   nativeCurrency: {
@@ -12,16 +37,16 @@ export const botchain = defineChain({
   },
   rpcUrls: {
     default: {
-      http: [process.env.NEXT_PUBLIC_RPC_URL || "https://rpc.bohr.life"],
+      http: ["https://rpc.bohr.life"],
     },
     public: {
-      http: [process.env.NEXT_PUBLIC_RPC_URL || "https://rpc.bohr.life"],
+      http: ["https://rpc.bohr.life"],
     },
   },
   blockExplorers: {
     default: {
       name: "Bohr Scan",
-      url: process.env.NEXT_PUBLIC_BLOCK_EXPLORER || "https://scan.bohr.life",
+      url: "https://scan.bohr.life",
     },
   },
   testnet: true,
@@ -45,13 +70,14 @@ export const hardhatLocal = defineChain({
 });
 
 export const wagmiConfig = createConfig({
-  chains: [botchain, hardhatLocal],
+  chains: [botchainMainnet, botchainTestnet, hardhatLocal],
   connectors: [
     injected({ target: "metaMask" }),
     injected(),
   ],
   transports: {
-    [botchain.id]: http(process.env.NEXT_PUBLIC_RPC_URL || "https://rpc.bohr.life"),
+    [botchainMainnet.id]: http(process.env.NEXT_PUBLIC_RPC_URL || "https://rpc.botchain.ai"),
+    [botchainTestnet.id]: http("https://rpc.bohr.life"),
     [hardhatLocal.id]: http("http://127.0.0.1:8545"),
   },
   ssr: true,

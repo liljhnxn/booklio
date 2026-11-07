@@ -2,9 +2,9 @@
 
 **Tagline:** *Your bookings, organized.*  
 **Version:** 1.0  
-**Network:** Botchain Testnet (Chain ID: 968)  
-**Smart Contract Address:** `0x6729e06eCf3F3E94d7Cd5AA6c50A1Fd5fa06961E`  
-**Explorer:** [https://scan.bohr.life/address/0x6729e06eCf3F3E94d7Cd5AA6c50A1Fd5fa06961E#code](https://scan.bohr.life/address/0x6729e06eCf3F3E94d7Cd5AA6c50A1Fd5fa06961E#code)  
+**Network:** Botchain Mainnet (Chain ID: 677)  
+**Smart Contract Address:** `0x8f51aE358b30c5499961b09b11bAB243C8F05B7b`  
+**Explorer:** [https://scan.botchain.ai/address/0x8f51aE358b30c5499961b09b11bAB243C8F05B7b#code](https://scan.botchain.ai/address/0x8f51aE358b30c5499961b09b11bAB243C8F05B7b#code)  
 **Repository:** [https://github.com/liljhnxn/booklio.git](https://github.com/liljhnxn/booklio.git)
 
 ---
@@ -78,11 +78,11 @@ Booklio utilizes a modern, serverless architecture that connects the client inte
 - **Timezone Synchronization:** Automatic client-side conversion of on-chain Unix timestamps to user's localized date and time formats.
 
 ### 4.2 Blockchain Layer
-- **Chain:** Botchain Testnet
-- **Chain ID:** `968`
-- **RPC URL:** `https://rpc.bohr.life`
-- **Block Explorer:** `https://scan.bohr.life`
-- **Native Gas Token:** `BOHR`
+- **Chain:** Botchain Mainnet
+- **Chain ID:** `677`
+- **RPC URL:** `https://rpc.botchain.ai`
+- **Block Explorer:** `https://scan.botchain.ai`
+- **Native Gas Token:** `BOT` (Total Supply: 150 Million)
 
 ---
 
@@ -133,3 +133,4 @@ Booklio operates as a lightweight utility protocol:
 - **Phase 2 (Current):** Ecosystem directory listing, co-marketing with Botchain, community testnet beta program.
 - **Phase 3:** Optional Web3 payment escrow integration, multi-wallet provider support, decentralized notifications (Push Protocol / XMTP).
 - **Phase 4:** Mainnet deployment on Botchain and decentralized calendar sync (iCal / Google Calendar read-only export).
+

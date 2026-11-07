@@ -66,7 +66,7 @@ export function Header() {
               ) : (
                 <div className="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-charcoal-800 border border-charcoal-700 text-slate-300">
                   <span className="w-2 h-2 rounded-full bg-brand-green animate-pulse" />
-                  <span>Botchain Testnet (968)</span>
+                  <span>Botchain Mainnet (677)</span>
                 </div>
               )}
             </div>
